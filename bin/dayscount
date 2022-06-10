@@ -1,0 +1,13 @@
+#!/bin/bash
+#Counting number of days on the basis of month provided by user
+read -p "Enter the Month & year :" month 
+read -p "Enter Year:" year
+
+
+echo "The user Enter Month $month and year $year" 
+if [[ $year -eq  NULL ]];
+then echo "Specify year"
+ else
+   a=$(cal $month $year)
+   echo $a | cut -d " " -f10- | awk -F " " '{print NF}'
+fi
